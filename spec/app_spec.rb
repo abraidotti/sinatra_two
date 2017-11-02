@@ -4,6 +4,7 @@ require_relative '../app.rb'  # <-- your sinatra app
 require 'rspec'
 require 'sinatra'
 require 'rack/test'
+require 'pry'
 
 describe 'App' do
   include Rack::Test::Methods
@@ -18,6 +19,17 @@ describe 'App' do
     expect(last_response.body).to include('Hello World')
   end
 
-  
+  it "/about renders the about page dog" do
+    get '/about'
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('About')
+  end
+
+  it "/contact renders the contact page dog" do
+    get '/contact'
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('Contact')
+  end
+
 
 end

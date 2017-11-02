@@ -10,3 +10,4 @@ gem 'sinatra-reloader'
 gem 'rspec'
 gem 'rack'
 gem 'rack-test'
+gem 'pry', group: :development
